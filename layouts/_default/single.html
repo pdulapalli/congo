@@ -17,10 +17,11 @@
         (and (.Params.showReadingTime | default (.Site.Params.article.showReadingTime | default true)) (ne .ReadingTime 0))
         (.Params.showEdit | default (.Site.Params.article.showEdit | default false))
       }}
-        <div class="mb-10 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        <div class="my-3 text-base text-neutral-500 print:hidden dark:text-neutral-400">
           {{ partial "article-meta.html" (dict "context" . "scope" "single") }}
         </div>
       {{ end }}
+      <hr class="mb-2 border-neutral-400">
       {{ with $feature }}
         <div class="prose">
           {{ $altText := $.Params.featureAlt | default $.Params.coverAlt | default "" }}
